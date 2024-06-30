@@ -1,32 +1,28 @@
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Connect to the database
+$db = new mysqli('localhost', 'root', '', 'db_hash');
 
-try {
-    // Connect to the database with error handling
-    $db = new PDO('mysql:host=localhost;dbname=db_hash', 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+// Check connection
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
 }
 
-// Start the session at the beginning
-session_start();
-
-// Get the form data and validate inputs
-$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+// Get the form data
+$username = $_POST['username'];
+$password = $_POST['password'];
 
 // Check if the user exists
 $sql = "SELECT * FROM users WHERE username = ?";
 $stmt = $db->prepare($sql);
-$stmt->execute([$username]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
 
 // Check if the password is correct
 if ($user && password_verify($password, $user['password'])) {
     // Login the user
+    session_start();
     $_SESSION['username'] = $username;
     $_SESSION['level'] = $user['level'];
     $_SESSION['id'] = $user['id'];
@@ -37,23 +33,26 @@ if ($user && password_verify($password, $user['password'])) {
         $type = 'Cashier';
     }
 
-    $stmt = $db->prepare('INSERT INTO user_logs (username, type, sign_in, created) VALUES (:username, :type, NOW(), NOW())');
-    $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':type', $type);
+    $stmt = $db->prepare('INSERT INTO user_logs (username, type, sign_in, created) VALUES (?, ?, NOW(), NOW())');
+    $stmt->bind_param('ss', $username, $type);
 
     // Execute the statement
     $stmt->execute();
 
-    // Check user level and redirect accordingly
+    // Check user level
     if ($user['level'] == 0) {
-        header('Location: ../dashboard.php');
+        header('location: ../dashboard.php');
     } else if ($user['level'] == 1) {
-        header('Location: ../point-of-sale.php');
+        header('location: ../point-of-sale.php');
     }
 } else {
     // Show an error message
+    session_start();
     $_SESSION['error'] = 'Invalid username or password';
-    header('Location: ../index.php');
+    header('location: ../index.php');
 }
-exit();
+
+// Close the statement and connection
+$stmt->close();
+$db->close();
 ?>
