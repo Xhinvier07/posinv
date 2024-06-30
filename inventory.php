@@ -24,7 +24,11 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><span>SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span></div>
+                    <div class="container-fluid"><span>SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span>
+                    <span ><?php echo "LOGGED-IN USER:  " . $_SESSION['username']; ?></span>
+
+                
+                </div>
                 </nav>
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Inventory Management</h3>
@@ -88,7 +92,7 @@
             </div>
             <footer class="bg-white sticky-footer">
                 <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Inventory &amp; Point of Sale System 2023</span></div>
+                    <div class="text-center my-auto copyright"><span>Copyright © SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span></div>
                 </div>
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>

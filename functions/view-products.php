@@ -13,7 +13,17 @@ $results = $stmt->fetchAll();
 foreach ($results as $row) {
 ?>
     <tr>
-        <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/item.png">&nbsp;<?php echo $row['id']; ?></td>
+        <td>
+            <?php
+                if (date('Y-m-d', strtotime($row['created'])) == date('Y-m-d')) {
+                    echo '<img class="rounded-circle me-2" width="30" height="30" src="assets/img/SARI.png">&nbsp;' . $row['product_name'];
+                } else {
+                    echo '<img class="rounded-circle me-2" width="30" height="30" src="assets/img/item.png">&nbsp;' . $row['product_name'];
+                }
+            ?>
+        </td>
+       
+        
         <td><?php echo $row['product_name']; ?></td>
         <td><?php echo $row['size']; ?></td>
         <td><?php echo $row['qty']; ?></td>
