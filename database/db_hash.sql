@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2024 at 03:26 PM
+-- Generation Time: Jun 30, 2024 at 03:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,7 +45,11 @@ CREATE TABLE `history` (
 
 INSERT INTO `history` (`id`, `user_id`, `product_id`, `product_name`, `size`, `qty`, `price`, `status`, `created`) VALUES
 (1, 4, 1, 'Dove', 12, 4, 50, 'success', '2024-06-30 21:16:38'),
-(2, 4, 1, 'Dove', 12, 3, 50, 'success', '2024-06-30 21:21:05');
+(2, 4, 1, 'Dove', 12, 3, 50, 'success', '2024-06-30 21:21:05'),
+(3, 4, 2, 'Chippy Barbecue Flavored Potato Chips', 150, 1, 25, 'success', '2024-06-30 21:46:05'),
+(4, 4, 2, 'Chippy Barbecue Flavored Potato Chips', 150, 1, 25, 'success', '2024-06-30 21:47:11'),
+(5, 4, 9, 'Del Monte Sweet Mixed Pickles', 375, 1, 65, 'success', '2024-06-30 21:47:58'),
+(6, 4, 5, 'Head & Shoulders Classic Clean Shampoo', 180, 1, 150, 'success', '2024-06-30 21:48:00');
 
 -- --------------------------------------------------------
 
@@ -90,14 +94,14 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `product_name`, `size`, `qty`, `price`, `created`) VALUES
 (1, 'Dove', 12, 9, 50, '2024-06-30 21:15:19'),
-(2, 'Chippy Barbecue Flavored Potato Chips', 150, 80, 25, '2024-06-30 21:24:18'),
+(2, 'Chippy Barbecue Flavored Potato Chips', 150, 78, 25, '2024-06-30 21:24:18'),
 (3, 'Gardenia Pandesal Bread', 450, 120, 40, '2024-06-30 21:24:18'),
 (4, 'Silver Swan Soy Sauce', 750, 90, 55, '2024-06-30 21:24:18'),
-(5, 'Head & Shoulders Classic Clean Shampoo', 180, 60, 150, '2024-06-30 21:24:18'),
+(5, 'Head & Shoulders Classic Clean Shampoo', 180, 59, 150, '2024-06-30 21:24:18'),
 (6, 'Magic Sarap Seasoning Mix', 100, 110, 30, '2024-06-30 21:24:18'),
 (7, 'Lucky Me! Instant Pancit Canton', 55, 150, 15, '2024-06-30 21:24:18'),
 (8, 'Palmolive', 20, 70, 8, '2024-06-30 21:24:18'),
-(9, 'Del Monte Sweet Mixed Pickles', 375, 85, 65, '2024-06-30 21:24:18'),
+(9, 'Del Monte Sweet Mixed Pickles', 375, 84, 65, '2024-06-30 21:24:18'),
 (10, 'Kopiko Brown Coffee Candy', 150, 90, 20, '2024-06-30 21:24:18'),
 (11, 'Safeguard Antibacterial Bar Soap', 130, 100, 45, '2024-06-30 21:24:18');
 
@@ -123,7 +127,10 @@ CREATE TABLE `transaction` (
 INSERT INTO `transaction` (`id`, `user_id`, `sales`, `amount`, `discounted_sales`, `created`) VALUES
 (1, 4, 0, 11, -4, '2024-06-30 21:16:34'),
 (2, 4, 200, 180, 180, '2024-06-30 21:16:54'),
-(3, 4, 150, 500, 130, '2024-06-30 21:21:13');
+(3, 4, 150, 500, 130, '2024-06-30 21:21:13'),
+(4, 4, 25, 50, 0, '2024-06-30 21:46:44'),
+(5, 4, 25, 25, 25, '2024-06-30 21:47:16'),
+(6, 4, 215, 200, 200, '2024-06-30 21:48:33');
 
 -- --------------------------------------------------------
 
@@ -185,7 +192,8 @@ INSERT INTO `user_logs` (`id`, `username`, `type`, `sign_in`, `sign_out`, `creat
 (14, 'dane', 'Admin', '2024-06-30 20:38:04', '2024-06-30 20:59:55', '2024-06-30 20:38:04'),
 (15, 'dane', 'Admin', '2024-06-30 21:01:15', '2024-06-30 21:04:24', '2024-06-30 21:01:15'),
 (16, 'shin', 'Admin', '2024-06-30 21:04:38', '2024-06-30 21:25:29', '2024-06-30 21:04:38'),
-(17, 'shin', 'Admin', '2024-06-30 21:25:45', '0000-00-00 00:00:00', '2024-06-30 21:25:45');
+(17, 'shin', 'Admin', '2024-06-30 21:25:45', '2024-06-30 21:28:57', '2024-06-30 21:25:45'),
+(18, 'shin', 'Admin', '2024-06-30 21:29:04', '0000-00-00 00:00:00', '2024-06-30 21:29:04');
 
 --
 -- Indexes for dumped tables
@@ -240,7 +248,7 @@ ALTER TABLE `user_logs`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `inventory`
@@ -258,7 +266,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -270,7 +278,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_logs`
 --
 ALTER TABLE `user_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

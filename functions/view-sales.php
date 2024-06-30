@@ -13,7 +13,7 @@ $results = $stmt->fetchAll();
 foreach ($results as $row) {
 ?>
     <tr>
-        <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/avatars/shoes.png">&nbsp;<?php echo $row['id']; ?></td>
+        <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/item.png">&nbsp;<?php echo $row['id']; ?></td>
         <?php get_username($row['user_id']);?>
         <td><?php echo $row['sales']; ?></td>
         <td><?php echo $row['discounted_sales'] - $row['sales']; ?></td>
