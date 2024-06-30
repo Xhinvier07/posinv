@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="assets/img/48.png">
     <title>SARI</title>
     <meta name="description" content="SARI">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -62,7 +63,7 @@
         var receipt = document.querySelector('.card.border-primary.border-2');
         var newWin = window.open('', 'Print-Window');
         newWin.document.open();
-        newWin.document.write('<html lang="en"><head><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"><link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css"><link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css"></head><body onload="window.print()"><div class="row mb-5"><div class="col-md-8 col-xl-6 text-center mx-auto"><h2>KYLE SHOES SHOP POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</h2></div></div>' + receipt.outerHTML + ' <script src="assets//bootstrap//js//bootstrap.min.js"><//script><script src="assets//js/bs-init.js"><//script><script src="assets//js/theme.js"><//script></body></html>');
+        newWin.document.write('<html lang="en"><head><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"><link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css"><link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css"></head><body onload="window.print()"><div class="row mb-5"><div class="col-md-8 col-xl-6 text-center mx-auto"><h2>SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</h2></div></div>' + receipt.outerHTML + ' <script src="assets//bootstrap//js//bootstrap.min.js"><//script><script src="assets//js/bs-init.js"><//script><script src="assets//js/theme.js"><//script></body></html>');
         newWin.document.close();
         newWin.document.close();
         setTimeout(function(){newWin.close();},10);

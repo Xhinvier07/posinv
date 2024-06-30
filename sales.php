@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="assets/img/48.png">
     <title>Sales Report | SARI</title>
     <meta name="description" content="Inventory &amp; Point of Sale System">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
