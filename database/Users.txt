@@ -1,0 +1,17 @@
+ADMINS (uname & pass)
+
+shin
+hello
+
+user
+1234
+
+dane
+1234
+
+
+CASHIERS (uname & pass)
+
+cashier
+12345
+
