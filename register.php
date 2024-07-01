@@ -47,8 +47,18 @@
                                     </div>
 
                                     <!-- if there is an error with pw, display it here -->
-                                    <?php if (isset($_GET['pw_error'])) { ?>
-                                        <p class="text-danger"><?php echo $_GET['pw_error']; ?></p>
+                                    <?php if (isset($_GET['pw_error0'])) { ?>
+                                        <p class="text-danger"><?php 
+                                        
+                                        for ($i = 0; $i <= 10; $i++) {
+                                            if (!isset($_GET['pw_error' . $i])) {
+                                                break;
+                                            }
+
+                                            echo $_GET['pw_error' . $i] . '<br>';
+                                        }
+                                            
+                                        ?></p>
                                     <?php } ?>
 
                                 </div>

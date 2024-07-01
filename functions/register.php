@@ -8,10 +8,11 @@ $username = sanitize_input($_POST['username']);
 $password = sanitize_input($_POST['password']);
 $password_repeat = sanitize_input($_POST['password_repeat']);
 
+$errors = array(); // holds all errors in input
+
 // Check if the passwords match
 if ($password != $password_repeat) {
-    header('Location: ../register.php?pw_error=Passwords do not match&username=' . $username);
-    exit();
+    $errors[] = "Passwords do not match!";
 }
 
 // Check if the username is already taken
@@ -21,19 +22,27 @@ $stmt->execute([$username]);
 $user = $stmt->fetch();
 
 if ($user) {
-    header('Location: ../register.php?pw_error=Username is already taken');
-    exit();
+    $errors[] = "Username is already taken!";
 }
 
 // Check if all required fields are filled
 if (empty($username) || empty($password) || empty($password_repeat)) {
-    header('Location: ../register.php?pw_error=All fields are required');
-    exit();
+    $errors[] = "All fields are required!";
 }
 
 // Check if the username length is more than 4 characters
 if (strlen($username) < 4) {
-    header('Location: ../register.php?pw_error=Username must be at least 4 characters long');
+    $errors[] = "Username must be at least 4 characters long!";
+}
+
+if (!empty($errors)) {
+    $get_str = "Location: ../register.php?username=" . $username;
+
+    foreach ($errors as $i => $error) {
+        $get_str .= '&pw_error' . $i . '=' . $error;
+    }
+
+    header($get_str);
     exit();
 }
 
