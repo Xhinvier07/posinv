@@ -46,7 +46,7 @@
                                         <input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Repeat Password" name="password_repeat">
                                     </div>
 
-                                    <!-- if there is an error with pw, display it here -->
+                                    <!-- if there is an error with the password, display it here -->
                                     <?php if (isset($_GET['pw_error0'])) { ?>
                                         <p class="text-danger"><?php 
                                         

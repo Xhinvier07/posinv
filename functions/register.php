@@ -35,6 +35,7 @@ if (strlen($username) < 4) {
     $errors[] = "Username must be at least 4 characters long!";
 }
 
+// Check if encountered any error
 if (!empty($errors)) {
     $get_str = "Location: ../register.php?username=" . $username;
 
