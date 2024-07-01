@@ -51,14 +51,14 @@ try {
 
         // Check user level
         if ($user['level'] == 0) {
-            header('location: ../dashboard.php');
+            header('Location: ../dashboard.php');
         } else if ($user['level'] == 1) {
-            header('location: ../point-of-sale.php');
+            header('Location: ../point-of-sale.php');
         }
     } else {
         // Show an error message
         $_SESSION['error'] = 'Invalid username or password';
-        header('location: ../index.php');
+        header('Location: ../index.php');
     }
 
     // Close the statement and connection
@@ -68,6 +68,6 @@ try {
     // Log the error or handle it as needed
     error_log($e->getMessage());
     $_SESSION['error'] = 'An error occurred. Please try again later.';
-    header('location: ../index.php');
+    header('Location: ../index.php');
 }
 ?>

@@ -36,6 +36,12 @@
                                     <div class="col-sm-6">
                                         <input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Repeat Password" name="password_repeat">
                                     </div>
+
+                                    <!-- if there is an error with pw, display it here -->
+                                    <?php if (isset($_GET['pw_error'])) { ?>
+                                        <p class="text-danger"><?php echo $_GET['pw_error']; ?></p>
+                                    <?php } ?>
+
                                 </div>
                                 <button class="btn btn-primary d-block btn-user w-100" type="submit">Register Account</button>
                                 <hr>
