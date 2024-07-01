@@ -23,7 +23,6 @@ while ($row = $result->fetch_assoc()) {
     echo "<tr>";
     echo "<td>" . $row["id"] . "</td>";
     echo "<td>" . $row["username"] . "</td>";
-    echo "<td>" . $row["password"] . "</td>";
     echo "<td>" . $type . "</td>";
     echo "<td>" . $row["created"] . "</td>";
     

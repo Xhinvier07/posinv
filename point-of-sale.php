@@ -24,7 +24,10 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><span>SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span></div>
+                    <div class="container-fluid"><span>SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span>
+                    <span ><?php echo "LOGGED-IN USER:  " . $_SESSION['username']; ?></span>
+
+                    </div>
                 </nav>
                 <div class="container">
                     <div class="row">
