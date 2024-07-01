@@ -4,9 +4,9 @@
 $db = new PDO('mysql:host=localhost;dbname=db_hash', 'root', '');
 
 // Get the form data
-$username = $_POST['username'];
-$password = $_POST['password'];
-$password_repeat = $_POST['password_repeat'];
+$username = sanitize_input($_POST['username']);
+$password = sanitize_input($_POST['password']);
+$password_repeat = sanitize_input($_POST['password_repeat']);
 
 // Check if the passwords match
 if ($password != $password_repeat) {
@@ -48,5 +48,14 @@ $stmt->execute([$username, $hash]);
 
 // Redirect the user to the login page
 header('Location: ../index.php');
+
+//Saniize the data
+function sanitize_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+
+    return $data;
+}
 
 ?>
