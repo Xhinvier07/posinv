@@ -23,7 +23,7 @@ if ($_SESSION['level'] == 0) {
     // User has level 1, show only point of sale link
     echo '<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
     <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-            <div class="sidebar-brand-text mx-3"><span><strong>KSSPOSIM&nbsp;</strong></span></div>
+            <div class="sidebar-brand-text mx-3"><img src="assets/img/sample.png" style="width: 150px; height: 50px;" /><span></span></div>
         </a>
         <hr class="sidebar-divider my-0">
         
