@@ -27,7 +27,16 @@
                             </div>
                             <form class="user" action="functions/register.php" method="post">
                                 <div class="mb-3">
-                                    <input class="form-control form-control-user" type="text" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" name="username">
+                                    <input class="form-control form-control-user" type="text" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" name="username"
+                                    
+                                    
+                                    <?php // if username was already inputted, it gets retained
+                                          if (isset($_GET['username'])) {
+                                            echo 'value="' . $_GET['username'] . '"';
+                                          }
+                                    ?>
+                                        
+                                    >
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-sm-6 mb-3 mb-sm-0">

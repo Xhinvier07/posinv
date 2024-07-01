@@ -10,7 +10,7 @@ $password_repeat = sanitize_input($_POST['password_repeat']);
 
 // Check if the passwords match
 if ($password != $password_repeat) {
-    header('Location: ../register.php?pw_error=Passwords do not match');
+    header('Location: ../register.php?pw_error=Passwords do not match&username=' . $username);
     exit();
 }
 
