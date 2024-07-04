@@ -25,7 +25,10 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><span>SARI |  POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span></div>
+                    <div class="container-fluid"><span>SARI |  POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span>
+                    <span ><?php echo "LOGGED-IN USER:  " . $_SESSION['username']; ?></span>
+
+                    </div>
                 </nav>
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Users Management&nbsp;</h3>
@@ -59,7 +62,7 @@
                         </div>
                     </div>
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h3 class="text-dark mb-0"></h3><button class="btn btn-primary btn-sm d-none d-sm-inline-block" type="button" data-bs-target="#add-user" data-bs-toggle="modal"><i class="fas fa-user fa-sm text-white-50"></i>&nbsp;Create Account</button>
+                        <h3 class="text-dark mb-0"></h3><button class="btn btn-primary btn-sm d-none d-sm-inline-block" type="button" data-bs-target="#add-user" data-bs-toggle="modal"><i class="fas fa-user fa-sm text-white-50"></i>&nbsp;Add Cashier</button>
                     </div>
                     <div class="card shadow">
                         <div class="card-header py-3">
@@ -74,7 +77,7 @@
                                         <tr>
                                             <th>User ID</th>
                                             <th>Username</th>
-                                            <th>Password</th>
+                                           
                                             <th>Type</th>
                                             <th>User Created</th>
                                             <th>Option</th>
