@@ -49,6 +49,8 @@ try {
         // Execute the statement
         $stmt->execute();
 
+        $_SESSION['error'] = '';
+
         // Check user level
         if ($user['level'] == 0) {
             header('Location: ../dashboard.php');

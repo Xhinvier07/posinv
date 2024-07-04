@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,6 +36,11 @@
                                         <div class="mb-3">
                                             <input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
+
+                                        <p style="color: darkred">
+                                            <?php echo $_SESSION['error']; ?>
+                                        </p>
+                                        
                                         <hr>
                                         <div class="mb-3">
                                             <div class="custom-control custom-checkbox small"></div>
