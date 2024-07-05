@@ -49,8 +49,6 @@ try {
         // Execute the statement
         $stmt->execute();
 
-        $_SESSION['error'] = '';
-
         // Check user level
         if ($user['level'] == 0) {
             header('Location: ../dashboard.php');
@@ -59,17 +57,18 @@ try {
         }
     } else {
         // Show an error message
-        $_SESSION['error'] = 'Invalid username or password';
-        header('Location: ../index.php');
+        $error = "Invalid username or password.";
+        header('Location: ../index.php?error=' . $error);
     }
 
     // Close the statement and connection
     $stmt->close();
     $db->close();
 } catch (Exception $e) {
-    // Log the error or handle it as needed
-    error_log($e->getMessage());
-    $_SESSION['error'] = 'An error occurred. Please try again later.';
-    header('Location: ../index.php');
+    // Log the error or handle it as needed in index.php via GET
+    $error = $e->getMessage();
+    error_log($error);
+    $error = "An error occurred. Please try again later. ($error)";
+    header('Location: ../index.php?error=' . $error);
 }
 ?>

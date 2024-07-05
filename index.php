@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +35,13 @@
                                             <input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
 
-                                        <p style="color: darkred">
-                                            <?php echo $_SESSION['error']; ?>
+                                        <p class="text-danger">
+                                            <?php 
+                                              // if $_GET['error'] is set, display the error message
+                                              if (isset($_GET['error'])) {
+                                                echo $_GET['error'];
+                                              }
+                                            ?>
                                         </p>
                                         
                                         <hr>
