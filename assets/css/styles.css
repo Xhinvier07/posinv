@@ -12,6 +12,7 @@ body {
     background-size: cover;
 }
 
+
 .btn-primary {
     color: #fff;
     background-color: #28a745;
@@ -26,9 +27,20 @@ body {
 
 .card {
     height: auto;
-    max-width: 1500px;
+    max-width: 1400px;
     margin: auto;
     border-radius: 20px;
+}
+
+
+
+.profile{
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.profile:hover {
+    transform: rotateY(180deg);
 }
 
 .card-body {

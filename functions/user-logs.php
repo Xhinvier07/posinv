@@ -3,10 +3,21 @@
 // Connect to the database
 $db = new PDO('mysql:host=localhost;dbname=db_hash', 'root', '');
 
-// Get all data from the products table
-$sql = 'SELECT * FROM user_logs';
-$stmt = $db->prepare($sql);
-$stmt->execute();
+// Get all data from the user_logs table and if $_GET['username'] is set, get all data from the user_logs table that matches the username
+
+if (isset($_GET['username'])) {
+    $username = $_GET['username'];
+    $sql = 'SELECT * FROM user_logs WHERE username = :username';
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+} else {
+    $sql = 'SELECT * FROM user_logs';
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+}
+
+// Fetch all the results
 $results = $stmt->fetchAll();
 
 // Loop through the results and add them to the table
