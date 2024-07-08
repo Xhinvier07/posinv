@@ -165,13 +165,13 @@
     <script>
         
         $('button[data-bs-target="#add-item"]').on('click', function() {
-        // Get the user ID from the data attribute.
-        var product_id = $(this).data('product-id');
-        console.log(product_id);
-        // Set the value of all input fields with the name "userid" to the user ID.
-        $('input[name="product_id"]').each(function() {
-            $(this).val(product_id);
-        });
+          // Get the user ID from the data attribute.
+          var product_id = $(this).data('product-id');
+          console.log(product_id);
+          // Set the value of all input fields with the name "userid" to the user ID.
+          $('input[name="product_id"]').each(function() {
+              $(this).val(product_id);
+          });
         });
 
         $('button[data-bs-target="#confirmation"]').on('click', function() {
