@@ -23,7 +23,7 @@
                     <div class="col-xl-6 form-container" style="padding: 10px;">
                         <div class="p-5">
                             <div class="text-center">
-                                <h4 class="text-dark mb-4">Create an Account!</h4>
+                                <h4 class="text-dark mb-4">Create an Admin Account!</h4>
                             </div>
                             <form class="user" action="functions/register.php" method="post">
                                 <div class="mb-3">

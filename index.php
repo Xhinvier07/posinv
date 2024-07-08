@@ -50,7 +50,7 @@
                                         </div>
                                         <button class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
                                         <div class="text-center">
-                                            <a class="small" href="register.php">Create an Account!</a>
+                                            <a class="small" href="register.php">Create an Admin Account!</a>
                                         </div>
                                     </form>
                                 </div>
