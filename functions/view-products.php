@@ -16,9 +16,9 @@ foreach ($results as $row) {
         <td>
             <?php
                 if (date('Y-m-d', strtotime($row['created'])) == date('Y-m-d')) {
-                    echo '<img class="rounded-circle me-2" width="30" height="30" src="assets/img/new.png">&nbsp;' . $row['product_name'];
+                    echo '<img class="rounded-circle me-2" width="30" height="30" src="assets/img/new.png">&nbsp;' . $row['id'];
                 } else {
-                    echo '<img class="rounded-circle me-2" width="30" height="30" src="assets/img/item.png">&nbsp;' . $row['product_name'];
+                    echo '<img class="rounded-circle me-2" width="30" height="30" src="assets/img/item.png">&nbsp;' . $row['id'];
                 }
             ?>
         </td>
