@@ -29,14 +29,14 @@ while ($row = $result->fetch_assoc()) {
 
     // If the user level is 0, don't add the remove button.
     if ($row["level"] == 0) {
-    echo "<td>
-    <button class=\"btn btn-warning btn-icon-split\" type=\"button\" style=\"margin: 2px;\" data-bs-target=\"#update\" data-bs-toggle=\"modal\" data-user-id=\"{$row['id']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-exclamation-triangle\"></i></span><span class=\"text-white text\">Change Password</span></button>
-    <a class=\"btn btn-info btn-icon-split\" role=\"button\" style=\"margin: 2px;\" href=\"logs.php?id={$row['id']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-info-circle\"></i></span><span class=\"text-white text\">Logs</span></a></td>";
+      echo "<td>
+      <button class=\"btn btn-warning btn-icon-split\" type=\"button\" style=\"margin: 2px;\" data-bs-target=\"#update\" data-bs-toggle=\"modal\" data-user-id=\"{$row['id']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-exclamation-triangle\"></i></span><span class=\"text-white text\">Change Password</span></button>
+      <a class=\"btn btn-info btn-icon-split\" role=\"button\" style=\"margin: 2px;\" href=\"logs.php?username={$row['username']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-info-circle\"></i></span><span class=\"text-white text\">Logs</span></a></td>";
     } else {
-    echo "<td>
-    <button class=\"btn btn-warning btn-icon-split\" type=\"button\" style=\"margin: 2px;\" data-bs-target=\"#update\" data-bs-toggle=\"modal\" data-user-id=\"{$row['id']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-exclamation-triangle\"></i></span><span class=\"text-white text\">Change Password</span></button>
-    <button class=\"btn btn-danger btn-icon-split\" type=\"button\" style=\"margin: 2px;\" data-bs-target=\"#confirmation\" data-bs-toggle=\"modal\" data-user-id=\"{$row['id']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-trash\"></i></span><span class=\"text-white text\">Remove</span></button>
-    <a class=\"btn btn-info btn-icon-split\" role=\"button\" style=\"margin: 2px;\" href=\"logs.php?id={$row['id']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-info-circle\"></i></span><span class=\"text-white text\">Logs</span></a></td>";
+      echo "<td>
+      <button class=\"btn btn-warning btn-icon-split\" type=\"button\" style=\"margin: 2px;\" data-bs-target=\"#update\" data-bs-toggle=\"modal\" data-user-id=\"{$row['id']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-exclamation-triangle\"></i></span><span class=\"text-white text\">Change Password</span></button>
+      <button class=\"btn btn-danger btn-icon-split\" type=\"button\" style=\"margin: 2px;\" data-bs-target=\"#confirmation\" data-bs-toggle=\"modal\" data-user-id=\"{$row['id']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-trash\"></i></span><span class=\"text-white text\">Remove</span></button>
+      <a class=\"btn btn-info btn-icon-split\" role=\"button\" style=\"margin: 2px;\" href=\"logs.php?username={$row['username']}\"><span class=\"text-white-50 icon\"><i class=\"fas fa-info-circle\"></i></span><span class=\"text-white text\">Logs</span></a></td>";
     }
 
     echo "</tr>";
