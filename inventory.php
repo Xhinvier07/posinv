@@ -50,7 +50,7 @@
 
                                             // Display the total number of users.
                                             echo "<div class=\"col me-2\">
-                                                    <div class=\"text-uppercase text-info fw-bold text-xs mb-1\"><span>total product</span></div>
+                                                    <div class=\"text-uppercase text-info fw-bold text-xs mb-1\"><span>total products</span></div>
                                                     <div class=\"text-dark fw-bold h5 mb-0\"><span>$total_products</span></div>
                                                 </div>";
 
@@ -198,43 +198,80 @@
     <script>
         
         $('button[data-bs-target="#stock-in"]').on('click', function() {
-        // Get the user ID from the data attribute.
-        var product_id = $(this).data('product-id');
-        console.log(product_id);
-        // Set the value of all input fields with the name "userid" to the user ID.
-        $('input[name="product_id"]').each(function() {
-            $(this).val(product_id);
-        });
+            // Get the user ID from the data attribute.
+            var product_id = $(this).data('product-id');
+            console.log(product_id);
+            // Set the value of all input fields with the name "userid" to the user ID.
+            $('input[name="product_id"]').each(function() {
+                $(this).val(product_id);
+            });
         });
 
         $('button[data-bs-target="#stock-out"]').on('click', function() {
-        // Get the user ID from the data attribute.
-        var product_id = $(this).data('product-id');
-        console.log(product_id);
-        // Set the value of all input fields with the name "userid" to the user ID.
-        $('input[name="product_id"]').each(function() {
-            $(this).val(product_id);
-        });
+
+            // Get the user ID from the data attribute.
+            var product_id = $(this).data('product-id');
+            console.log(product_id);
+
+            // Set the value of all input fields with the name "userid" to the user ID.
+            $('input[name="product_id"]').each(function() {
+                $(this).val(product_id);
+            });
+
         });
 
         $('button[data-bs-target="#update-product"]').on('click', function() {
-        // Get the user ID from the data attribute.
-        var product_id = $(this).data('product-id');
-        console.log(product_id);
-        // Set the value of all input fields with the name "userid" to the user ID.
-        $('input[name="product_id"]').each(function() {
-            $(this).val(product_id);
-        });
+
+            // Get the product ID from the data attribute.
+            var product_id = $(this).data('product-id');
+            var product_name = $(this).data('product-name');
+            var size = $(this).data('size');
+            var qty = $(this).data('qty');
+            var price = $(this).data('price');
+
+            console.log(product_id);
+            console.log(product_name);
+            console.log(size);
+            console.log(qty);
+            console.log(price);
+
+            // Set the value of all input fields with the name "product_id" to the product ID.
+            $('input[name="product_id"]').each(function() {
+                $(this).val(product_id);
+            });
+
+            // Set the value of all input fields with the name "product_name" to the product name.
+            $('input[name="product_name"]').each(function() {
+                $(this).val(product_name);
+            });
+
+            // Set the value of all input fields with the name "size" to the product size.
+            $('input[name="size"]').each(function() {
+                $(this).val(size);
+            });
+
+            // Set the value of all input fields with the name "qty" to the product qty.
+            $('input[name="qty"]').each(function() {
+                $(this).val(qty);
+            });
+
+            // Set the value of all input fields with the name "price" to the product price.
+            $('input[name="price"]').each(function() {
+                $(this).val(price);
+            });
         });
 
         $('button[data-bs-target="#confirmation"]').on('click', function() {
-        // Get the user ID from the data attribute.
-        var product_id = $(this).data('product-id');
-        console.log(product_id);
-        // Set the value of all input fields with the name "userid" to the user ID.
-        $('input[name="product_id"]').each(function() {
-            $(this).val(product_id);
-        });
+
+            // Get the user ID from the data attribute.
+            var product_id = $(this).data('product-id');
+            console.log(product_id);
+
+            // Set the value of all input fields with the name "userid" to the user ID.
+            $('input[name="product_id"]').each(function() {
+                $(this).val(product_id);
+            });
+
         });
     </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
