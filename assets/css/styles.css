@@ -32,6 +32,17 @@ body {
     border-radius: 20px;
 }
 
+
+
+.profile{
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.profile:hover {
+    transform: rotateY(180deg);
+}
+
 .card-body {
     display: flex;
     justify-content: center;
