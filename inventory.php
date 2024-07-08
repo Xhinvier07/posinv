@@ -63,7 +63,7 @@
                     </div>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Product List</p><button class="btn btn-primary btn-icon-split" type="button" data-bs-target="#add-product" data-bs-toggle="modal"><span class="text-white-50 icon"><i class="fas fa-download"></i></span><span class="text-white text">Add Product</span></button>
+                            <p class="text-primary m-0 fw-bold">Product List</p><button  class="btn btn-primary btn-icon-split" type="button" data-bs-target="#add-product" data-bs-toggle="modal"><span class="text-white-50 icon"><i class="fas fa-download"></i></span><span class="text-white text">Add Product</span></button>
                         </div>
                         <div class="card-body">
                             
