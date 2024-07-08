@@ -17,10 +17,10 @@
 
 <body class="bg-gradient-primary">
     <div class="container">
-        <div class="card shadow-lg o-hidden border-0 my-5">
+        <div style="max-width:500px;" class="card shadow-lg o-hidden border-0 my-5">
             <div class="card-body p-0">
                 <div class="row justify-content-center">
-                    <div class="col-xl-6 form-container" style="padding: 40px;">
+                    <div class="col-xl-6 form-container" style="padding: 10px;">
                         <div class="p-5">
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">Create an Account!</h4>

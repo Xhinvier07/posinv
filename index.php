@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-12 col-xl-10">
-                <div class="card shadow-lg o-hidden border-0 my-5">
+                <div style="max-width:400px;"class="card shadow-lg o-hidden border-0 my-5">
                     <div class="card-body p-0">
                         <div class="row justify-content-center">
                             <div class="col-xl-6 form-container">
