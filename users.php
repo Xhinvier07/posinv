@@ -168,6 +168,8 @@
                 return false;
             }
 
+            alert("Password changed successfully.");
+
             return true;
         }
         $('button[data-bs-target="#update"]').on('click', function() {
