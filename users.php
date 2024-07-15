@@ -31,7 +31,7 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Users Management&nbsp;</h3>
+                    <h3 class="text-dark mb-4">User Management&nbsp;</h3>
                     <div class="row">
                         <div class="col-md-6 col-xl-4 mb-4">
                             <div class="card shadow border-start-warning py-2">
@@ -53,9 +53,54 @@
                                                 <div class=\"text-uppercase text-info fw-bold text-xs mb-1\"><span>total users</span></div>
                                                 <div class=\"text-dark fw-bold h5 mb-0\"><span>$total_users</span></div>
                                                 </div>";
-
                                         ?>
                                         <div class="col-auto"><i class="fa-solid fa-user fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <div class="card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <?php
+                                        // Get the total number of cashiers.
+                                        $sql = "SELECT COUNT(*) FROM users WHERE level = 1";
+                                        $stmt = $db->prepare($sql);
+                                        $stmt->execute();
+                                        $row = $stmt->fetch();
+                                        $total_cashiers = $row['COUNT(*)'];
+
+                                        // Display the total number of cashiers.
+                                        echo "<div class=\"col me-2\">
+                                                <div class=\"text-uppercase text-success fw-bold text-xs mb-1\"><span>total cashiers</span></div>
+                                                <div class=\"text-dark fw-bold h5 mb-0\"><span>$total_cashiers</span></div>
+                                                </div>";
+                                        ?>
+                                        <div class="col-auto"><i class="fa-solid fa-cash-register fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <div class="card shadow border-start-primary py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <?php
+                                        // Get the total number of admins.
+                                        $sql = "SELECT COUNT(*) FROM users WHERE level = 0";
+                                        $stmt = $db->prepare($sql);
+                                        $stmt->execute();
+                                        $row = $stmt->fetch();
+                                        $total_admins = $row['COUNT(*)'];
+
+                                        // Display the total number of admins.
+                                        echo "<div class=\"col me-2\">
+                                                <div class=\"text-uppercase text-primary fw-bold text-xs mb-1\"><span>total admins</span></div>
+                                                <div class=\"text-dark fw-bold h5 mb-0\"><span>$total_admins</span></div>
+                                                </div>";
+                                        ?>
+                                        <div class="col-auto"><i class="fa-solid fa-user-shield fa-2x text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
