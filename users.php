@@ -209,6 +209,20 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script>
+
+        function validatePassword() {
+            var new_password = document.getElementById("new_password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+
+            if (new_password != confirm_password) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            alert("Password changed successfully.");
+
+            return true;
+        }
         $('button[data-bs-target="#update"]').on('click', function() {
             // Get the user ID from the data attribute.
             var user_id = $(this).data('user-id');
@@ -228,6 +242,10 @@
                 $(this).val(user_id);
             });
         });
+
+      
+
+
     </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
