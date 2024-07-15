@@ -32,6 +32,7 @@ try {
         $_SESSION['username'] = $username;
         $_SESSION['level'] = $user['level'];
         $_SESSION['id'] = $user['id'];
+        $_SESSION['profile_picture'] = $user['profile_picture'];
 
         if ($user['level'] == 0) {
             $type = 'Admin';

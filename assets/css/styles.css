@@ -111,4 +111,16 @@ body, button, ::placeholder, input, select, .card, form.user .form-control-user,
     border-radius: 0.35rem;
 }
 
+.profile-pic-container {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+}
 
+.img-profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
