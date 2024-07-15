@@ -108,8 +108,8 @@
                             <div class="card-body text-center p-4">
                                 <h6 class="text-uppercase text-muted card-subtitle">TOTAL</h6>
                                 <h4 class="display-4 fw-bold card-title">₱<?php include 'functions/pos-total.php'; ?></h4>
-                                <div class="mb-3"><input class="form-control" type="number" name="discount" placeholder="Discount "></div>
-                                <div class="mb-3"><input class="form-control" type="number" name="amount" placeholder="Amount "></div>
+                                <div class="mb-3"><input class="form-control" type="number" name="discount" min=0 max=9999 placeholder="Discount "></div>
+                                <div class="mb-3"><input class="form-control" type="number" name="amount"  min=0 max=999999 placeholder="Amount "></div>
                                 <input type="hidden" name="total_sales" value="<?php include 'functions/pos-total.php'; ?>">
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                     <p>Quantity</p>
                     <form class="text-center" action="functions/pos-add-item.php" method="post">
                         <input type="hidden" name="product_id">
-                        <div class="mb-3"><input class="form-control" type="number" name="item_qty" value="1" placeholder="1" min=1 max=999 required></div>
+                        <div class="mb-3"><input class="form-control" type="number" id="item_qty" name="item_qty" value="1" placeholder="1" min=1 max=999 required></div>
                         <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Add Item</button></div>
                     </form>
                 </div>
@@ -174,22 +174,28 @@
            
         })
 
-      
-
-
-       
-
-
-        
+    
         $('button[data-bs-target="#add-item"]').on('click', function() {
-          // Get the user ID from the data attribute.
-          var product_id = $(this).data('product-id');
-          console.log(product_id);
-          //enable the purchase button
-          // Set the value of all input fields with the name "userid" to the user ID.
-          $('input[name="product_id"]').each(function() {
-              $(this).val(product_id);
-          });
+            // Get product ID and available quantity from data attributes
+            var product_id = $(this).data('product-id');
+            var max_qty = $(this).data('product-qty');
+
+            // Set the product ID in the hidden input field
+            $('input[name="product_id"]').val(product_id);
+
+            // Store max_qty in a data attribute for validation later
+            $('#item_qty').data('max-qty', max_qty);
+        });
+
+        // Validate quantity before form submission
+        $('#add-item form').on('submit', function(e) {
+            var entered_qty = parseInt($('#item_qty').val());
+            var max_qty = parseInt($('#item_qty').data('max-qty'));
+
+            if (entered_qty > max_qty) {
+                alert('Quantity exceeds the available stock.');
+                e.preventDefault(); // Prevent form submission
+            } 
         });
 
         $('button[data-bs-target="#confirmation"]').on('click', function() {

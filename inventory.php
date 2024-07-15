@@ -163,7 +163,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Product Information</p>
-                    <form class="text-center" action="functions/stock-out.php" method="post">
+                    <form class="text-center" action="functions/stock-out.php" method="post" onsubmit="return validateStockIn()">
                         <input type="hidden" name="product_id">
                         <div class="mb-3"><input class="form-control" type="text" name="qty" min=1 max=999 placeholder="Quantity" pattern="^(?:[1-9][0-9]{0,2})$" required></div>
                         <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Stock out</button></div>
@@ -191,6 +191,21 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script>
+
+        function validateStockOut() {
+            var qty = document.querySelector('input[name="qty"]').value;
+            var product_id = document.querySelector('input[name="product_id"]').value;
+
+            // get the current quantity of the product
+            var current_qty = document.querySelector(`input[name="current_qty_${product_id}"]`).value;
+
+            if (parseInt(qty) > parseInt(current_qty)) {
+                alert("Stock-out quantity exceeds available quantity.");
+                return false;
+            }
+
+            return true;
+        }
         
         $('button[data-bs-target="#stock-in"]').on('click', function() {
             // Get the user ID from the data attribute.
@@ -212,7 +227,6 @@
             $('input[name="product_id"]').each(function() {
                 $(this).val(product_id);
             });
-
         });
 
         $('button[data-bs-target="#update-product"]').on('click', function() {
