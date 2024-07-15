@@ -202,7 +202,8 @@
         function validatePassword() {
             var new_password = document.getElementById("new_password").value;
             var confirm_password = document.getElementById("confirm_password").value;
-
+            
+            // check if the current password is correct
             if (new_password != confirm_password) {
                 alert("Passwords do not match.");
                 return false;

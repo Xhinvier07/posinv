@@ -32,7 +32,10 @@ if (password_verify($_POST['password'], $current_password)) {
 
 } else {
 
-  // Display an error message.
-  echo "The current password is incorrect.";
+  // Display an error message. use alert() function
+  echo "<script>alert('Incorrect password. Please try again.'); window.location.href='../users.php';</script>";
+
 
 }
+
+?>
