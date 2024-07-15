@@ -1,6 +1,7 @@
-body, button, ::placeholder, input, select {
+body, button, ::placeholder, input, select, .card, form.user .form-control-user, form.user .btn-user {
     letter-spacing: -0.75px;
-    font-weight: 600
+    font-weight: 600;
+    border-radius: 10px;
 }
 
 .bg-gradient-primary {
@@ -9,6 +10,9 @@ body, button, ::placeholder, input, select {
     background-size: cover;
 }
 
+.sidebar .nav-item .nav-link, form.user .form-control-user, form.user .form-control-user, form.user .btn-user {
+    font-size: 0.9rem;
+}
 
 .btn-primary {
     color: #fff;
@@ -70,9 +74,8 @@ body, button, ::placeholder, input, select {
 
 .card {
     height: auto;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: auto;
-    border-radius: 20px;
 }
 
 .profile{

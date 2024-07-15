@@ -15,11 +15,7 @@
 
 <body>
     <div class="container py-4 py-xl-5">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <h2>SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</h2>
-            </div>
-        </div>
+        <?php include_once('navbar.php') ?>
         <div class="row gy-2 gy-xl-0 row-cols-1 row-cols-md-2 row-cols-xl-3 d-xl-flex justify-content-center align-items-xl-center" style="font-weight:600;" >
             <div class="col"style="border-color:#28a745;" >
                 <div class="card border-primary border-5"style="border-color:#28a745;" >

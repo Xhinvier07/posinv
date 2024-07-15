@@ -23,7 +23,7 @@
                     <div class="col-xl-6 form-container" style="padding: 10px;">
                         <div class="p-5">
                             <div class="text-center">
-                                <h4 class="text-dark mb-4">Create an Admin Account!</h4>
+                                <h4 class="text-dark mb-4"><strong>Create an Admin Account!</strong></h4>
                             </div>
                             <form class="user" action="functions/register.php" method="post">
                                 <div class="mb-3">
@@ -62,8 +62,11 @@
                                     <?php } ?>
 
                                 </div>
-                                <button class="btn btn-primary d-block btn-user w-100" type="submit">Register Account</button>
                                 <hr>
+                                <button class="btn btn-primary d-block btn-user w-100" type="submit">Register Account</button>
+                                <div class="text-center">
+                                    <a class="small" href="index.php">Go back</a>
+                                </div>
                             </form>
                         </div>
                     </div>
