@@ -12,7 +12,7 @@ include 'functions/authentication.php';
     <meta name="description" content="SARI">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css">
     <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -40,7 +40,7 @@ include 'functions/authentication.php';
                                             <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Total Cashier</span></div>
                                             <div class="text-dark fw-bold h5 mb-0"><span><?php include_once 'functions/dashboard-users.php'; ?></span></div>
                                         </div>
-                                        <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
+                                        <div class="col-auto"><i class="fa-solid fa-user fa-2x text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@ include 'functions/authentication.php';
                                             <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Earnings (today)</span></div>
                                             <div class="text-dark fw-bold h5 mb-0"><span>₱<?php include_once 'functions/dashboard-today-sales.php'; ?></span></div>
                                         </div>
-                                        <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
+                                        <div class="col-auto"><i class="fa-solid fa-peso-sign fa-2x text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@ include 'functions/authentication.php';
                                             <div class="text-dark fw-bold h5 mb-0"><span>₱<?php include_once 'functions/dashboard-month-sales.php'; ?></span></div>
                                             <div class="text-dark fw-bold h5 mb-0"></div>
                                         </div>
-                                        <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                                        <div class="col-auto"><i class="fa-solid fa-peso-sign fa-2x text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ include 'functions/authentication.php';
                                             <div class="text-dark fw-bold h5 mb-0"><span>₱<?php include_once 'functions/dashboard-year-sales.php'; ?></span></div>
                                             <div class="text-dark fw-bold h5 mb-0"></div>
                                         </div>
-                                        <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                                        <div class="col-auto"><i class="fa-solid fa-peso-sign fa-2x text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
