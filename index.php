@@ -12,20 +12,20 @@
     <link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css">
     <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 
 <body class="bg-gradient-primary">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-12 col-xl-10">
-                <div style="max-width:400px;"class="card shadow-lg o-hidden border-0 my-5">
+                <div style="max-width:400px;" class="card shadow-lg o-hidden border-0 my-5">
                     <div class="card-body p-0">
                         <div class="row justify-content-center">
                             <div class="col-xl-6 form-container">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h4 class="text-dark mb-4">Login</h4>
+                                        <h4 class="text-dark mb-4"><strong>Login</strong></h4>
                                     </div>
                                     <form class="user" action="functions/login.php" method="post">
                                         <div class="mb-3">
@@ -37,7 +37,6 @@
 
                                         <p class="text-danger">
                                             <?php 
-                                              // if $_GET['error'] is set, display the error message
                                               if (isset($_GET['error'])) {
                                                 echo $_GET['error'];
                                               }
@@ -61,10 +60,46 @@
             </div>
         </div>
     </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel"><strong>Success!</strong></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-body-text">Registered successfully! You may now login your account.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="py-4 py-xl-5"></section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/theme.js"></script>
+
+    <script>
+        <?php if(isset($_GET['success']) && $_GET['success'] == '1'): ?>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show the success modal
+            var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+
+            // Trigger confetti
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+        <?php endif; ?>
+    </script>
 </body>
 
 </html>

@@ -90,8 +90,8 @@ $sql = "INSERT INTO users (username, password, level, created) VALUES (?, ?, 0, 
 $stmt = $db->prepare($sql);
 $stmt->execute([$username, $hash]);
 
-// Redirect the user to the login page
-header('Location: ../index.php');
+// Redirect the user to the login page with success code
+header('Location: ../index.php?success=1');
 
 //Saniize the data
 function sanitize_input($data){
