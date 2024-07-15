@@ -11,13 +11,58 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css">
     <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+    <script>
+        var cashierName = "<?php session_start(); echo htmlspecialchars($_SESSION['username']); ?>";
+
+        function printReceipt() {
+            var receipt = document.querySelector('.card.border-primary.border-5');
+            var newWin = window.open('', 'Print-Window');
+            newWin.document.open();
+            newWin.document.write(`
+                <html lang="en">
+                    <head>
+                        <meta charset="utf-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+                        <link rel="icon" type="image/png" href="assets/img/48.png">
+                        <title>Print Receipt</title>
+                        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+                        <link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css">
+                        <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
+                        <link rel="stylesheet" href="assets/css/styles.css">
+                    </head>
+                    <body onload="window.print()">
+                        <div class="container py-4 py-xl-5">
+                            <div class="row mb-5">
+                                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                                    <img src="./assets/img/sari.png" alt="SARI Logo" style="max-width: 100%; height: auto;">
+                                </div>
+                            </div>
+                            ${receipt.outerHTML}
+                            <div class="text-center mt-4">
+                                <!-- Cashier Information -->
+                                <p>Cashier: ${cashierName}</p>
+                            </div>
+                        </div>
+                    </body>
+                </html>
+            `);
+            newWin.document.close();
+            setTimeout(function(){newWin.close();}, 10);
+        }
+    </script>
     <div class="container py-4 py-xl-5">
-        <?php include_once('navbar.php') ?>
         <div class="row gy-2 gy-xl-0 row-cols-1 row-cols-md-2 row-cols-xl-3 d-xl-flex justify-content-center align-items-xl-center" style="font-weight:600;" >
             <div class="col"style="border-color:#28a745;" >
+                <div class="row mb-5">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <img src="./assets/img/sari.png" alt="SARI Logo" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
                 <div class="card border-primary border-5"style="border-color:#28a745;" >
                     <div class="card-body text-center p-4"><span class="badge rounded-pill bg-primary position-absolute top-0 start-50 translate-middle text-uppercase">Receipt</span>
                         <h6 class="text-uppercase text-muted card-subtitle">TOTAL</h6>
@@ -49,22 +94,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center mt-4">
+                    <!-- Cashier Information -->
+                    <p>Cashier: <?php echo $_SESSION['username']?></p>
+                </div>
                 <button class="btn btn-primary d-block w-100" style="background-color:#28a745;margin-bottom:10px; margin-top:10px" onclick="printReceipt()">Print</button>
                 <a class="btn btn-primary d-block w-100"style="background-color:#28a745;" role="button" href="point-of-sale.php">Go back</a>
             </div>
         </div>
     </div>
-    <script>
-       function printReceipt() {
-        var receipt = document.querySelector('.card.border-primary.border-5');
-        var newWin = window.open('', 'Print-Window');
-        newWin.document.open();
-        newWin.document.write('<html lang="en"><head><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"><link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css"><link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css"></head><body onload="window.print()"><div class="row mb-5"><div class="col-md-8 col-xl-6 text-center mx-auto"><h2>SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</h2></div></div>' + receipt.outerHTML + ' <script src="assets//bootstrap//js//bootstrap.min.js"><//script><script src="assets//js/bs-init.js"><//script><script src="assets//js/theme.js"><//script></body></html>');
-        newWin.document.close();
-        newWin.document.close();
-        setTimeout(function(){newWin.close();},10);
-}
-    </script>
+                           
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/theme.js"></script>

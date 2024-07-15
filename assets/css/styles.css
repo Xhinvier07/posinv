@@ -131,3 +131,7 @@ body, button, ::placeholder, input, select, .card, form.user .form-control-user,
     --bs-alert-bg: #f5d7d7;
     --bs-alert-border-color: #e5b8b8;
 }
+
+.bs-icon.bs-icon-primary-light {
+    color: #11540e
+}

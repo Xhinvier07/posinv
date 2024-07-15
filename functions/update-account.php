@@ -32,20 +32,18 @@ if (!password_verify($_POST['password'], $current_password)) {
 // Validate the new password
 $new_password = $_POST['new_password'];
 
-if (!preg_match($password_regex_letter, $new_password)) {
-    $validation[] = "Password should have at least 1 letter!";
-}
-
+// Validate password against regular expressions
 if (!preg_match($password_regex_special, $new_password)) {
-    $validation[] = "Password should have at least 1 special character!";
+    $validation[] = "Password must contain at least one special character (!@#$%^&*).";
 }
-
+if (!preg_match($password_regex_letter, $new_password)) {
+    $validation[] = "Password must contain at least one letter.";
+}
 if (!preg_match($password_regex_number, $new_password)) {
-    $validation[] = "Password should have at least 1 number!";
+    $validation[] = "Password must contain at least one number.";
 }
-
 if (!preg_match($password_regex_length, $new_password)) {
-    $validation[] = "Password should have at least 8 characters!";
+    $validation[] = "Password must be at least 8 characters long.";
 }
 
 // Function to set multiple flash messages

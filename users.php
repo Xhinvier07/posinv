@@ -131,8 +131,8 @@
                                             <th>Username</th>
                                            
                                             <th>Type</th>
-                                            <th>User Created</th>
-                                            <th>Option</th>
+                                            <th>Date Created</th>
+                                            <th>User Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
