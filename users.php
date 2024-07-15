@@ -25,6 +25,18 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <?php include_once('navbar.php') ?>
+                <?php
+                    if (isset($_SESSION['flash_messages'])) {
+                        foreach ($_SESSION['flash_messages'] as $message) {
+                            echo '<div class="alert alert-info alert-dismissible fade show" role="alert">' .
+                                $message .
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' .
+                                '</div>';
+                        }
+                        // Clear flash messages after displaying
+                        unset($_SESSION['flash_messages']);
+                    }
+                ?>
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">User Management&nbsp;</h3>
                     <div class="row">
@@ -166,11 +178,11 @@
                     <h4 class="modal-title">Change Password</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p>User Information</p>
+                  <p>User Information</p>
                     <form class="text-center" action="functions/update-account.php" method="post">
                         <input type="hidden" name="userid">
-                        <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Old Password" minlength="5" pattern="^(?!\s).*$" required></div>
-                        <div class="mb-3"><input class="form-control" type="password" name="new_password" placeholder="Confirm Password" minlength="5" pattern="^(?!\s).*$" required></div>
+                        <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Current Password" minlength="5" pattern="^(?!\s).*$" required></div>
+                        <div class="mb-3"><input class="form-control" type="password" name="new_password" placeholder="New Password" minlength="5" pattern="^(?!\s).*$" required></div>
                         <div class="mb-3"></div>
                         <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Change Password</button></div>
                     </form>

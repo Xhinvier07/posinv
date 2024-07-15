@@ -10,6 +10,7 @@ body, button, ::placeholder, input, select, .card, form.user .form-control-user,
     background-size: cover;
 }
 
+
 .sidebar .nav-item .nav-link, form.user .form-control-user, form.user .form-control-user, form.user .btn-user {
     font-size: 0.9rem;
 }
@@ -123,4 +124,10 @@ body, button, ::placeholder, input, select, .card, form.user .form-control-user,
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.alert-info {
+    --bs-alert-color: #802219;
+    --bs-alert-bg: #f5d7d7;
+    --bs-alert-border-color: #e5b8b8;
 }

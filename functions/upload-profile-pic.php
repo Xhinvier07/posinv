@@ -53,7 +53,6 @@ if (isset($_FILES['profile_pic']) && $_FILES['profile_pic']['error'] === UPLOAD_
                         $stmt->bindParam(':id', $id);
                         
                         if ($stmt->execute()) {
-                            setFlashMessage("Profile picture uploaded successfully.");
                             echo "Profile picture uploaded successfully.";
                             $_SESSION['profile_picture'] = $upload_path;
                         } else {

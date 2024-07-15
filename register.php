@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css">
     <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-
 </head>
 
 <body class="bg-gradient-primary">
@@ -28,14 +27,11 @@
                             <form class="user" action="functions/register.php" method="post">
                                 <div class="mb-3">
                                     <input class="form-control form-control-user" type="text" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" name="username"
-                                    
-                                    
-                                    <?php // if username was already inputted, it gets retained
-                                          if (isset($_GET['username'])) {
-                                            echo 'value="' . $_GET['username'] . '"';
-                                          }
+                                    <?php 
+                                        if (isset($_GET['username'])) {
+                                            echo 'value="' . htmlspecialchars($_GET['username']) . '"';
+                                        }
                                     ?>
-                                        
                                     >
                                 </div>
                                 <div class="row mb-3">
@@ -45,26 +41,30 @@
                                     <div class="col-sm-6">
                                         <input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Repeat Password" name="password_repeat">
                                     </div>
-
-                                    <!-- if there is an error with the password, display it here -->
-                                    <?php if (isset($_GET['pw_error0'])) { ?>
-                                        <p class="text-danger"><?php 
-                                        
-                                        for ($i = 0; $i <= 10; $i++) {
-                                            if (!isset($_GET['pw_error' . $i])) {
-                                                break;
-                                            }
-
-                                            echo $_GET['pw_error' . $i] . '<br>';
-                                        }
-                                            
-                                        ?></p>
-                                    <?php } ?>
-
                                 </div>
+                                
+                                <!-- Error display section -->
+                                <div id="errorContainer" class="mb-3">
+                                    <?php
+                                    $errors = [];
+                                    for ($i = 0; isset($_GET['error' . $i]); $i++) {
+                                        $errors[] = $_GET['error' . $i];
+                                    }
+                                    if (!empty($errors)) {
+                                        echo '<div class="alert alert-danger" role="alert">';
+                                        echo '<ul class="mb-0">';
+                                        foreach ($errors as $error) {
+                                            echo '<li>' . htmlspecialchars($error) . '</li>';
+                                        }
+                                        echo '</ul>';
+                                        echo '</div>';
+                                    }
+                                    ?>
+                                </div>
+
                                 <hr>
                                 <button class="btn btn-primary d-block btn-user w-100" type="submit">Register Account</button>
-                                <div class="text-center">
+                                <div class="text-center mt-3">
                                     <a class="small" href="index.php">Go back</a>
                                 </div>
                             </form>

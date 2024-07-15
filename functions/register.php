@@ -63,7 +63,7 @@ if (!empty($errors)) {
     $get_str = "Location: ../register.php?username=" . $username;
 
     foreach ($errors as $i => $error) {
-        $get_str .= '&pw_error' . $i . '=' . $error;
+        $get_str .= '&error' . $i . '=' . $error;
     }
 
     header($get_str);
@@ -74,7 +74,7 @@ else if (!empty($validation)){
     $get_str = "Location: ../register.php?username=" . $username;
 
     foreach ($validation as $i => $error) {
-        $get_str .= '&pw_error' . $i . '=' . $error;
+        $get_str .= '&error' . $i . '=' . $error;
     }
 
     header($get_str);

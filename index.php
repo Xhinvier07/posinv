@@ -48,7 +48,7 @@
                                             <div class="custom-control custom-checkbox small"></div>
                                         </div>
                                         <button class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
-                                        <div class="text-center">
+                                        <div class="text-center mt-3">
                                             <a class="small" href="register.php">Create an Admin Account!</a>
                                         </div>
                                     </form>
