@@ -8,7 +8,7 @@ die("Connection failed: " . $db->connect_error);
 }
 
 // Get all the rows from the `users` table
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users ORDER BY created DESC";
 $result = $db->query($sql);
 
 // Check if there are any rows in the result set
