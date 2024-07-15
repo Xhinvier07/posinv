@@ -13,7 +13,7 @@ $results = $stmt->fetchAll();
 foreach ($results as $row) {
 ?>
     <tr>
-        <td><img class="rounded-circle me-2" width="30" height="30" src="assets/img/item.png">&nbsp;<?php echo $row['id']; ?></td>
+        <td><img class="rounded-circle me-2" width="20" height="20" src="assets/img/item.png">&nbsp;<?php echo $row['id']; ?></td>
         <td><?php echo $row['product_name']; ?></td>
         <td><?php echo $row['size']; ?></td>
         <td><?php echo $row['qty']; ?></td>

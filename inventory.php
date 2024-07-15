@@ -49,7 +49,7 @@
                                                 </div>";
 
                                             ?>
-                                        <div class="col-auto"><i class="fas fa-table fa-2x text-gray-300"></i></div>
+                                        <div class="col-auto"><i class="fa-solid fa-cart-shopping fa-2x text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,8 @@
                                 <table class="table table-hover table-bordered my-0" id="dataTable">
                                     <thead>
                                         <tr>
-                                            <th>Product Code</th>
+                                            
+                                            <th style="white-space: nowrap;">Product ID</th>
                                             <th>Product Name</th>
                                             <th>Size</th>
                                             <th>Qty</th>

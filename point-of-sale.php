@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="card-footer p-4">
                                     <form class="text-center" method="post">
-                                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="button" data-bs-target="#purchase" data-bs-toggle="modal">Purchase&nbsp;</button></div>
+                                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="button" data-bs-target="#purchase" data-bs-toggle="modal" disabled>Purchase&nbsp;</button></div>
                                     </form>
                                     <div class="card" style="margin-top: 16px;">
                                         <div class="card-header py-3">
@@ -45,7 +45,7 @@
                                                 <table class="table table-hover table-bordered my-0" id="dataTable">
                                                     <thead>
                                                         <tr>
-                                                            <th>Product Code</th>
+                                                            <th style="white-space: nowrap;">Product Code</th>
                                                             <th>Product Name</th>
                                                             <th>Size</th>
                                                             <th>Quantity</th>
@@ -74,7 +74,7 @@
                                         <table class="table table-hover table-bordered my-0" id="dataTable">
                                             <thead>
                                                 <tr>
-                                                    <th>Product Code</th>
+                                                    <th style="white-space: nowrap;">Product Code</th>
                                                     <th>Product Name</th>
                                                     <th>Size</th>
                                                     <th>Quantity</th>
@@ -158,11 +158,34 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script>
+
+        //#purchase button
+        $(document).ready(function(){
+            // initially disable the purchase button
+            $('button[data-bs-target="#purchase"]').prop('disabled', true);
+            // check if there is a product in the cart by checking if there is remove button
+            if ($('button[data-bs-target="#confirmation"]').length) {
+                // enable the purchase button
+                $('button[data-bs-target="#purchase"]').prop('disabled', false);
+            }else{
+                // disable the purchase button
+                $('button[data-bs-target="#purchase"]').prop('disabled', true);
+            }
+           
+        })
+
+      
+
+
+       
+
+
         
         $('button[data-bs-target="#add-item"]').on('click', function() {
           // Get the user ID from the data attribute.
           var product_id = $(this).data('product-id');
           console.log(product_id);
+          //enable the purchase button
           // Set the value of all input fields with the name "userid" to the user ID.
           $('input[name="product_id"]').each(function() {
               $(this).val(product_id);
