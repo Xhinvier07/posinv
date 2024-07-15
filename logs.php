@@ -25,9 +25,15 @@
             <div id="content">
                 <?php include_once('navbar.php') ?>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">System Logs</h3>
+                    <h3 class="text-dark mb-4">
+                        System Logs
+                        <?php
+                        if (isset($_GET['username']) && !empty($_GET['username'])) {
+                            echo ' (' . htmlspecialchars($_GET['username']) . ')';
+                        }
+                        ?>
+                    </h3>
                 </div>
-               
                 <div class="container py-4 py-xl-5">
                     <div class="card shadow">
                         <div class="card-header py-3">
@@ -73,7 +79,7 @@
                                             <th>Type</th>
                                             <th>Sign-In</th>
                                             <th>Sign-Out</th>
-                                            <th>Data Created</th>
+                                            <th>Date Created</th>
                                         </tr>
                                     </thead>
                                     <tbody>

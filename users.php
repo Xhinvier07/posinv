@@ -24,14 +24,9 @@
 
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><span>SARI |  POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span>
-                    <a href="dashboard.php"><span ><img  class="profile" src="assets/img/prof.png" width="50" height="50"></span></a> 
-
-                    </div>
-                </nav>
+                <?php include_once('navbar.php') ?>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Users Management&nbsp;</h3>
+                    <h3 class="text-dark mb-4">User Management&nbsp;</h3>
                     <div class="row">
                         <div class="col-md-6 col-xl-4 mb-4">
                             <div class="card shadow border-start-warning py-2">
@@ -53,9 +48,54 @@
                                                 <div class=\"text-uppercase text-info fw-bold text-xs mb-1\"><span>total users</span></div>
                                                 <div class=\"text-dark fw-bold h5 mb-0\"><span>$total_users</span></div>
                                                 </div>";
-
                                         ?>
                                         <div class="col-auto"><i class="fa-solid fa-user fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <div class="card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <?php
+                                        // Get the total number of cashiers.
+                                        $sql = "SELECT COUNT(*) FROM users WHERE level = 1";
+                                        $stmt = $db->prepare($sql);
+                                        $stmt->execute();
+                                        $row = $stmt->fetch();
+                                        $total_cashiers = $row['COUNT(*)'];
+
+                                        // Display the total number of cashiers.
+                                        echo "<div class=\"col me-2\">
+                                                <div class=\"text-uppercase text-success fw-bold text-xs mb-1\"><span>total cashiers</span></div>
+                                                <div class=\"text-dark fw-bold h5 mb-0\"><span>$total_cashiers</span></div>
+                                                </div>";
+                                        ?>
+                                        <div class="col-auto"><i class="fa-solid fa-cash-register fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 mb-4">
+                            <div class="card shadow border-start-primary py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <?php
+                                        // Get the total number of admins.
+                                        $sql = "SELECT COUNT(*) FROM users WHERE level = 0";
+                                        $stmt = $db->prepare($sql);
+                                        $stmt->execute();
+                                        $row = $stmt->fetch();
+                                        $total_admins = $row['COUNT(*)'];
+
+                                        // Display the total number of admins.
+                                        echo "<div class=\"col me-2\">
+                                                <div class=\"text-uppercase text-primary fw-bold text-xs mb-1\"><span>total admins</span></div>
+                                                <div class=\"text-dark fw-bold h5 mb-0\"><span>$total_admins</span></div>
+                                                </div>";
+                                        ?>
+                                        <div class="col-auto"><i class="fa-solid fa-user-shield fa-2x text-gray-300"></i></div>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +144,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add User</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title">Add Cashier Account</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <p>User Information</p>
@@ -112,7 +152,7 @@
                         <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="Username" minlength="5" pattern="^(?!\s).*$" required></div>
                         <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" minlength="5" pattern="^(?!\s).*$" required></div>
                         <div class="mb-3"></div>
-                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Add User</button></div>
+                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Add Cashier</button></div>
                     </form>
                 </div>
                 <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
