@@ -127,10 +127,11 @@
                 </div>
                 <div class="modal-body">
                     <p>User Information</p>
-                    <form class="text-center" action="functions/update-account.php" method="post">
+                    <form class="text-center" action="functions/update-account.php" method="post" onsubmit="return validatePassword()">
                         <input type="hidden" name="userid">
                         <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Old Password" minlength="5" pattern="^(?!\s).*$" required></div>
-                        <div class="mb-3"><input class="form-control" type="password" name="new_password" placeholder="Confirm Password" minlength="5" pattern="^(?!\s).*$" required></div>
+                        <div class="mb-3"><input class="form-control" type="password" id="new_password" name="new_password" placeholder="New Password" minlength="5" pattern="^(?!\s).*$" required></div>
+                        <div class="mb-3"><input class="form-control" type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" minlength="5" pattern="^(?!\s).*$" required></div>
                         <div class="mb-3"></div>
                         <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Change Password</button></div>
                     </form>
@@ -157,6 +158,18 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script>
+
+        function validatePassword() {
+            var new_password = document.getElementById("new_password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+
+            if (new_password != confirm_password) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
         $('button[data-bs-target="#update"]').on('click', function() {
             // Get the user ID from the data attribute.
             var user_id = $(this).data('user-id');
@@ -176,6 +189,10 @@
                 $(this).val(user_id);
             });
         });
+
+      
+
+
     </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
