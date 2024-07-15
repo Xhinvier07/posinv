@@ -73,7 +73,7 @@
                                             <th>Type</th>
                                             <th>Sign-In</th>
                                             <th>Sign-Out</th>
-                                            <th>Data Created</th>
+                                            <th>Date Created</th>
                                         </tr>
                                     </thead>
                                     <tbody>
