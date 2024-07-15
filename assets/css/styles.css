@@ -1,14 +1,11 @@
-body {
+body, button, ::placeholder, input, select {
     letter-spacing: -0.75px;
-}
-
-::placeholder, input, select {
-    letter-spacing: -0.75px;
+    font-weight: 600
 }
 
 .bg-gradient-primary {
     background-color: #28a745;
-    background-image: linear-gradient(180deg, #28a745 10%, #218838 100%);
+    background-image: linear-gradient(180deg, #1f925a 10%, #1cc845 100%);
     background-size: cover;
 }
 
@@ -17,12 +14,58 @@ body {
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.btn-info {
+    background-color: #8e9d9b;
+    border-color: #8e9d9b;
+}
+
+.btn-info:hover {
+    background-color: #bcc3c2;
+    border-color: #bcc3c2;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(90deg, #28a76a 10%, #30b23b 100%);
+    z-index: -1;
+    transition: opacity 0.3s ease , transform 0.3s ease;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(-90deg, #1ed987 10%, #b5c07d 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .btn-primary:hover {
-    color: #fff;
-    background-color: #218838;
-    border-color: #1e7e34;
+    border-color: #424010;
+    transform: scale(1.015); 
+}
+
+.btn-primary:hover::before {
+    opacity: 0;
+}
+
+.btn-primary:hover::after {
+    opacity: 1;
 }
 
 .card {
@@ -31,8 +74,6 @@ body {
     margin: auto;
     border-radius: 20px;
 }
-
-
 
 .profile{
     transition: transform 0.6s;
