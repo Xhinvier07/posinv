@@ -16,6 +16,11 @@ $stmt->execute();
 // Get the total sales
 $total_sales = $stmt->fetchColumn();
 
+// if no sales set total sales to 0
+if ($total_sales === null) {
+    $total_sales = 0;
+}
+
 // Display the total sales
 echo $total_sales;
 

@@ -7,12 +7,12 @@ $db = new PDO('mysql:host=localhost;dbname=db_hash', 'root', '');
 
 if (isset($_GET['username'])) {
     $username = $_GET['username'];
-    $sql = 'SELECT * FROM user_logs WHERE username = :username';
+    $sql = 'SELECT * FROM user_logs WHERE username = :username ORDER BY created DESC';
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 } else {
-    $sql = 'SELECT * FROM user_logs';
+    $sql = 'SELECT * FROM user_logs ORDER BY created DESC';
     $stmt = $db->prepare($sql);
     $stmt->execute();
 }

@@ -4,7 +4,7 @@
 $db = new PDO('mysql:host=localhost;dbname=db_hash', 'root', '');
 
 // Get all data from the products table
-$sql = 'SELECT * FROM transaction';
+$sql = 'SELECT * FROM transaction ORDER BY created DESC';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $results = $stmt->fetchAll();
@@ -25,7 +25,7 @@ foreach ($results as $row) {
 }
 function get_username($user_id){
     $db = new PDO('mysql:host=localhost;dbname=db_hash', 'root', '');
-    $sql = 'SELECT * FROM users WHERE id = :id';
+    $sql = 'SELECT * FROM users WHERE id = :id ';
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':id', $user_id);
     $stmt->execute();
