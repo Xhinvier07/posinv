@@ -14,6 +14,11 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   $labels[] = $monthName . ' ' . $row['year'];
   $data[] = $row['total_sales'];
 }
+
+// Define the RGB color for the line chart
+$lineColorRgb = "204, 125, 0"; 
+$fillColorRgba = "204, 85, 0, 0.05"; 
+
 $chartData = [
   'labels' => $labels,
   'datasets' => [
@@ -21,8 +26,8 @@ $chartData = [
       'label' => 'Earnings',
       'fill' => true,
       'data' => $data,
-      'backgroundColor' => 'rgba(78, 115, 223, 0.05)',
-      'borderColor' => 'rgba(78, 115, 223, 1)'
+      'backgroundColor' => "rgba($fillColorRgba)",
+      'borderColor' => "rgba($lineColorRgb)"
     ]
   ]
 ];
@@ -31,5 +36,5 @@ $chartData = [
 $chartDataJson = json_encode($chartData);
 ?>
 
-<!-- Render the chart -->
+
 <canvas data-bss-chart='{"type":"line","data":<?php echo $chartDataJson; ?>,"options":{"maintainAspectRatio":false,"legend":{"display":false,"labels":{"fontStyle":"normal"}},"title":{"fontStyle":"normal"},"scales":{"xAxes":[{"gridLines":{"color":"rgb(234, 236, 244)","zeroLineColor":"rgb(234, 236, 244)","drawBorder":false,"drawTicks":false,"borderDash":["2"],"zeroLineBorderDash":["2"],"drawOnChartArea":false},"ticks":{"fontColor":"#858796","fontStyle":"normal","padding":20}}],"yAxes":[{"gridLines":{"color":"rgb(234, 236, 244)","zeroLineColor":"rgb(234, 236, 244)","drawBorder":false,"drawTicks":false,"borderDash":["2"],"zeroLineBorderDash":["2"]},"ticks":{"fontColor":"#858796","fontStyle":"normal","padding":20}}]}}}'></canvas>
