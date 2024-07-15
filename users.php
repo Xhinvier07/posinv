@@ -104,7 +104,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add User</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title">Add Cashier Account</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <p>User Information</p>
@@ -112,7 +112,7 @@
                         <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="Username" minlength="5" pattern="^(?!\s).*$" required></div>
                         <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" minlength="5" pattern="^(?!\s).*$" required></div>
                         <div class="mb-3"></div>
-                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Add User</button></div>
+                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Add Cashier</button></div>
                     </form>
                 </div>
                 <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
