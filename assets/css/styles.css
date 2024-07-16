@@ -135,3 +135,15 @@ body, button, ::placeholder, input, select, .card, form.user .form-control-user,
 .bs-icon.bs-icon-primary-light {
     color: #11540e
 }
+
+a {
+    color: #0b852a; 
+}
+
+a:hover {
+    color: #44c294; 
+}
+
+a:visited {
+    color: #7c7d6c; 
+}
