@@ -21,7 +21,7 @@ if ($total_sales === null) {
     $total_sales = 0;
 }
 
-// Display the total sales
-echo $total_sales;
+// Display the total sales, rounding up to two decimal places
+echo number_format($total_sales, 2);
 
 ?>
