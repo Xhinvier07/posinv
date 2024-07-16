@@ -165,16 +165,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add Item</h4>
-                    <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title">Add Item</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <p>Quantity</p>
-                    <form action="functions/pos-add-item.php" method="post">
+                    <form id="add-item-form" class="text-center" action="functions/pos-add-item.php" method="post">
                         <input type="hidden" name="product_id">
-                        <div class="mb-3">
-                            <input class="form-control" type="number" id="item_qty" name="item_qty" value="1" placeholder="1" min="1" max="999" required>
-                        </div>
+                        <div class="mb-3"><input class="form-control" type="number" id="item_qty" name="item_qty" value="1" placeholder="1" min=1 max=999 required></div>
                     </form>
                 </div>
                 <div class="modal-footer">
