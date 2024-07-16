@@ -20,7 +20,7 @@ $size = $row['size'];
 $price = $row['price'];
 $current_qty = $row['qty'];
 
-// Check if the quantity is greater than the current quantity
+// Assert that the quantity is lesser or equal than the current quantity
 if ($current_qty < $qty) {
     header('Location: ../point-of-sale.php');
     exit;
@@ -34,15 +34,15 @@ $stmt->bindParam(':product_id', $product_id);
 $stmt->execute();
 $results = $stmt->fetchAll();
 
+$new_qty = $current_qty - $qty;
+$sql = "UPDATE products SET qty = :new_qty WHERE id = :product_id";
+$stmt = $db->prepare($sql);
+$stmt->bindParam(':new_qty', $new_qty);
+$stmt->bindParam(':product_id', $product_id);
+$stmt->execute();
+
 // If the product does not exist in the history table, insert it
 if (count($results) == 0) {
-    $new_qty = $current_qty - $qty;
-    $sql = "UPDATE products SET qty = :new_qty WHERE id = :product_id";
-    $stmt = $db->prepare($sql);
-    $stmt->bindParam(':new_qty', $new_qty);
-    $stmt->bindParam(':product_id', $product_id);
-    $stmt->execute();
-
     // Insert a new row into the history table
     $sql = "INSERT INTO history (user_id, product_id, product_name, size, qty, price, created) VALUES (:user_id, :product_id, :product_name, :size, :qty, :price, NOW())";
     $stmt = $db->prepare($sql);

@@ -49,12 +49,12 @@
                                         <table class="table table-hover table-bordered my-0" id="dataTable">
                                             <thead>
                                                 <tr>
-                                                    <th style="white-space: nowrap;">Product Code</th>
+                                                    <th style="white-space: nowrap;">Code (ID)</th>
                                                     <th>Product Name</th>
                                                     <th>Size</th>
                                                     <th>Quantity</th>
                                                     <th>Price</th>
-                                                    <th>Option</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -77,12 +77,12 @@
                                         <table class="table table-hover table-bordered my-0" id="dataTable">
                                             <thead>
                                                 <tr>
-                                                    <th style="white-space: nowrap;">Product Code</th>
+                                                    <th style="white-space: nowrap;">Code (ID)</th>
                                                     <th>Product Name</th>
                                                     <th>Size</th>
                                                     <th>Quantity</th>
                                                     <th>Price</th>
-                                                    <th>Option</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -117,11 +117,11 @@
                             <h4 class="display-4 fw-bold card-title mb-4">₱<?php include 'functions/pos-total.php'; ?></h4>
                             
                             <div class="mb-3">
-                                <input class="form-control" type="number" id="discount" name="discount" min="0" max="999999" placeholder="Enter amount to be discounted">
+                                <input class="form-control" type="number" id="discount" name="discount" min="0" placeholder="Enter amount to be discounted">
                             </div>
                             
                             <div class="mb-3">
-                                <input class="form-control" type="number" id="amount" name="amount" min="0" max="999999" placeholder="Enter amount received">
+                                <input class="form-control" type="number" id="amount" name="amount" min="0" placeholder="Enter amount received" required>
                             </div>
                             
                             <input type="hidden" name="total_sales" value="<?php include 'functions/pos-total.php'; ?>">
@@ -171,7 +171,7 @@
                     <p>Quantity</p>
                     <form id="add-item-form" class="text-center" action="functions/pos-add-item.php" method="post">
                         <input type="hidden" name="product_id">
-                        <div class="mb-3"><input class="form-control" type="number" id="item_qty" name="item_qty" value="1" placeholder="1" min=1 max=999 required></div>
+                        <div class="mb-3"><input class="form-control" type="number" id="item_qty" name="item_qty" value="1" placeholder="1" min=1 required></div>
                     </form>
                 </div>
                 <div class="modal-footer">
