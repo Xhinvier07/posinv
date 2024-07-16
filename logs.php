@@ -37,7 +37,7 @@
                 <div class="container py-4 py-xl-5">
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Inventory</p>
+                            <p class="text-primary m-0 fw-bold">Inventory Log</p>
                         </div>
                         <div class="card-body">
                             
