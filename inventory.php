@@ -137,7 +137,7 @@
                         <div class="mb-3"><input class="form-control" type="text" name="product_name" placeholder="Product Name"></div>
                         <div class="mb-3"><input class="form-control" type="number" name="size" placeholder="Size" min=1 required></div>
                         <div class="mb-3"><input class="form-control" type="number" name="qty" placeholder="Quantity" min=0 required></div>
-                        <div class="mb-3"><input class="form-control" type="number" name="price" placeholder="Price" min=1 required></div>
+                        <div class="mb-3"><input class="form-control" type="number" name="price" placeholder="Price" min=0 step=0.01 required></div>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
