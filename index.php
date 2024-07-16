@@ -13,16 +13,67 @@
     <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            background-image: url("https://images.pexels.com/photos/2609107/pexels-photo-2609107.jpeg?cs=srgb&dl=pexels-dariuskrs-2609107.jpg&fm=jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .landing-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .landing-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px); /* Apply blur effect */
+            background-color: rgba(255, 255, 255, 0.1); /* White-tinted glass effect */
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+        }
+
+        .panel {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .panel h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .panel p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .form-container {
+            border-left: 1px solid #dee2e6;
+            padding-left: 2rem;
+        }
+    </style>
 </head>
 
-<body class="bg-gradient-primary">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-9 col-lg-12 col-xl-10">
-                <div style="max-width:400px;" class="card shadow-lg o-hidden border-0 my-5">
+<body>
+    <div class="landing-page">
+        <div class="landing-content">
+            <div class="panel">
+                <img src="assets/img/sari.png" alt="SARI Logo" class="mb-3" style="max-width: 200px;">
+            </div>
+            <div class="form-container">
+                <div class="card shadow-lg o-hidden border-0 my-5">
                     <div class="card-body p-0">
                         <div class="row justify-content-center">
-                            <div class="col-xl-6 form-container">
+                            <div class="col-xl-10">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4"><strong>Login</strong></h4>
