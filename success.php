@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css">
     <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+      .card-subtitle {
+          margin-right: 5px;
+      }
+    </style>
 </head>
 
 <body>
@@ -34,6 +40,12 @@
                         <link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css">
                         <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
                         <link rel="stylesheet" href="assets/css/styles.css">
+
+                        <style>
+                          .card-subtitle {
+                              margin-right: 5px;
+                          }
+                        </style>
                     </head>
                     <body onload="window.print()">
                         <div class="container py-4 py-xl-5">

@@ -96,29 +96,46 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="purchase">
-        <div class="modal-dialog" role="document">
-            <form action="functions/pos-transaction.php" method="post">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Point of Sale</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Purchase Confirmation&nbsp;</p>
-                        <div class="card">
-                            <div class="card-body text-center p-4">
-                                <h6 class="text-uppercase text-muted card-subtitle">TOTAL</h6>
-                                <h4 class="display-4 fw-bold card-title">₱<?php include 'functions/pos-total.php'; ?></h4>
-                                <div class="mb-3"><input class="form-control" type="number" name="discount" min=0 max=9999 placeholder="Discount "></div>
-                                <div class="mb-3"><input class="form-control" type="number" name="amount"  min=0 max=999999 placeholder="Amount "></div>
-                                <input type="hidden" name="total_sales" value="<?php include 'functions/pos-total.php'; ?>">
+    <div class="modal-dialog" role="document">
+        <form action="functions/pos-transaction.php" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Point of Sale</h4>
+                    <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center mb-4">Purchase Confirmation</h5>
+                    <div class="card">
+                        <div class="card-body text-center p-4">
+                            <h6 class="text-uppercase text-muted card-subtitle">TOTAL</h6>
+                            <h4 class="display-4 fw-bold card-title mb-4">₱<?php include 'functions/pos-total.php'; ?></h4>
+                            
+                            <div class="mb-3">
+                                <input class="form-control" type="number" id="discount" name="discount" min="0" max="999999" placeholder="Enter amount to be discounted">
                             </div>
+                            
+                            <div class="mb-3">
+                                <input class="form-control" type="number" id="amount" name="amount" min="0" max="999999" placeholder="Enter amount received">
+                            </div>
+                            
+                            <input type="hidden" name="total_sales" value="<?php include 'functions/pos-total.php'; ?>">
                         </div>
                     </div>
-                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="submit">Save</button></div>
                 </div>
-            </form>
-        </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" type="submit">Confirm</button>
+                </div>
+            </div>
+        </form>
     </div>
+</div>
+
+<style>
+    .card-body {
+        display: block;
+    }
+</style>
     <div class="modal fade" role="dialog" tabindex="-1" id="confirmation">
         <div class="modal-dialog" role="document">
             <form action="functions/pos-remove-history.php" method="post">
