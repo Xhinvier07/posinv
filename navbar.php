@@ -9,7 +9,7 @@ if(isset($_SESSION['flash_message'])) {
 ?>
 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
   <div class="container-fluid">
-    <span class="navbar-light">SARI | POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM</span>
+    <span class="navbar-light">SARI | POINT OF SALE & INVENTORY MANAGEMENT SYSTEM</span>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
