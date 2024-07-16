@@ -156,18 +156,24 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add Cashier Account</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title">Add Cashier Account</h4>
+                    <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
-                    <p>User Information</p>
-                    <form class="text-center" action="functions/create-account.php" method="post">
-                        <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="Username" minlength="5" pattern="^(?!\s).*$" required></div>
-                        <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" minlength="5" pattern="^(?!\s).*$" required></div>
-                        <div class="mb-3"></div>
-                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Add Cashier</button></div>
-                    </form>
-                </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+                <form action="functions/create-account.php" method="post">
+                    <div class="modal-body">
+                        <h5 class="mb-4">User Information</h5>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" name="username" placeholder="Username" minlength="5" pattern="^(?!\s).*$" required>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="password" name="password" placeholder="Password" minlength="5" pattern="^(?!\s).*$" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="submit">Add Cashier</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -175,19 +181,25 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Change Password</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title">Change Password</h4>
+                    <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
-                  <p>User Information</p>
-                    <form class="text-center" action="functions/update-account.php" method="post">
+                <form action="functions/update-account.php" method="post">
+                    <div class="modal-body">
+                        <h5 class="mb-4">User Information</h5>
                         <input type="hidden" name="userid">
-                        <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Current Password" minlength="5" pattern="^(?!\s).*$" required></div>
-                        <div class="mb-3"><input class="form-control" type="password" name="new_password" placeholder="New Password" minlength="5" pattern="^(?!\s).*$" required></div>
-                        <div class="mb-3"></div>
-                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Change Password</button></div>
-                    </form>
-                </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+                        <div class="mb-3">
+                            <input class="form-control" type="password" name="password" placeholder="Current Password" minlength="5" pattern="^(?!\s).*$" required>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="password" name="new_password" placeholder="New Password" minlength="5" pattern="^(?!\s).*$" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="submit">Change Password</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

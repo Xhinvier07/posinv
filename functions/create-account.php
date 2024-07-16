@@ -25,11 +25,17 @@ $password_regex_special = '/[!@#$%^&*]/';
 $password_regex_letter = '/[A-Za-z]/';
 $password_regex_number = '/\d/';
 $password_regex_length = '/^.{8,}$/';
+$username_regex = '/^[a-zA-Z0-9._]+$/';
 
 // Basic validation
 if (empty($username)) {
     $errors[] = "Username is required.";
+} else {
+  if (!preg_match($username_regex, $username)) {
+    $errors[] = "Username cannot contain symbols except '.' and '_'.";
+  }
 }
+
 if (empty($password)) {
     $errors[] = "Password is required.";
 } else {
