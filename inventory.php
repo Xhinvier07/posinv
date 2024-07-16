@@ -109,9 +109,9 @@
                     <div class="modal-body">
                         <h5 class="mb-4">Enter Product Information</h5>
                         <div class="mb-3"><input class="form-control" type="text" pattern="^[\w](?!.*?\.{2})[\w.]{1,28}[\w]$" name="product_name" placeholder="Product Name" required></div>
-                        <div class="mb-3"><input class="form-control" type="number" name="size" placeholder="Size" min=1 max=999 required></div>
-                        <div class="mb-3"><input class="form-control" type="number" name="qty" placeholder="Quantity" min=1 max=999 required></div>
-                        <div class="mb-3"><input class="form-control" type="number" name="price" placeholder="Price" min=1 max=999 required></div>
+                        <div class="mb-3"><input class="form-control" type="number" name="size" placeholder="Size" min=1 required></div>
+                        <div class="mb-3"><input class="form-control" type="number" name="qty" placeholder="Quantity" min=1 required></div>
+                        <div class="mb-3"><input class="form-control" type="number" name="price" placeholder="Price" min=0 step=0.01 required></div>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>

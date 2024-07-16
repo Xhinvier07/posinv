@@ -34,7 +34,7 @@ CREATE TABLE `history` (
   `product_name` varchar(255) NOT NULL,
   `size` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` float(11) NOT NULL,
   `status` varchar(255) NOT NULL,
   `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -103,7 +103,7 @@ CREATE TABLE `products` (
   `product_name` varchar(255) NOT NULL,
   `size` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` float(11) NOT NULL,
   `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
