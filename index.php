@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
+        html, body {
+          overflow: hidden;
+        }
+
         body {
             background-image: url("https://images.pexels.com/photos/2609107/pexels-photo-2609107.jpeg?cs=srgb&dl=pexels-dariuskrs-2609107.jpg&fm=jpg");
             background-size: cover;
