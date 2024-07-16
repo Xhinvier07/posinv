@@ -63,7 +63,7 @@ include 'functions/authentication.php';
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings (monthly)</span></div>
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings (This month)</span></div>
                                             <div class="text-dark fw-bold h5 mb-0"><span>₱<?php include_once 'functions/dashboard-month-sales.php'; ?></span></div>
                                             <div class="text-dark fw-bold h5 mb-0"></div>
                                         </div>
@@ -77,7 +77,7 @@ include 'functions/authentication.php';
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings (annually)</span></div>
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings (This year)</span></div>
                                             <div class="text-dark fw-bold h5 mb-0"><span>₱<?php include_once 'functions/dashboard-year-sales.php'; ?></span></div>
                                             <div class="text-dark fw-bold h5 mb-0"></div>
                                         </div>
