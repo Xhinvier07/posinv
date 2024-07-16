@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/Pricing-Centered-badges.css">
     <link rel="stylesheet" href="assets/css/Pricing-Centered-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -161,7 +162,7 @@
                 </div>
                 <form action="functions/create-account.php" method="post">
                     <div class="modal-body">
-                        <h5 class="mb-4">User Information</h5>
+                        <h5 class="mb-4">Enter Account Details</h5>
                         <div class="mb-3">
                             <input class="form-control" type="text" name="username" placeholder="Username" minlength="5" pattern="^(?!\s).*$" required>
                         </div>
@@ -186,7 +187,7 @@
                 </div>
                 <form action="functions/update-account.php" method="post">
                     <div class="modal-body">
-                        <h5 class="mb-4">User Information</h5>
+                        <h5 class="mb-4">Enter Account Details</h5>
                         <input type="hidden" name="userid">
                         <div class="mb-3">
                             <input class="form-control" type="password" name="password" placeholder="Current Password" minlength="5" pattern="^(?!\s).*$" required>
@@ -259,9 +260,47 @@
 
 
     </script>
+
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel"><strong>Success!</strong></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-body-text">Cashier registered successfully! They may now login to their account.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-4 py-xl-5"></section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/theme.js"></script>
+
+    <script>
+        <?php if(isset($_GET['success']) && $_GET['success'] == '1'): ?>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show the success modal
+            var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+
+            // Trigger confetti
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+        <?php endif; ?>
+    </script>
 </body>
 
 </html>

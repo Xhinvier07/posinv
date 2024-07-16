@@ -75,12 +75,12 @@ if (empty($errors)) {
     $stmt->execute([$username, $hash]);
 
     // Redirect the user to the user management page
-    header('Location: ../users.php');
+    header('Location: ../users.php?success=1');
     exit();
 } else {
     // Set flash messages for each error
     foreach ($errors as $error) {
-        setFlashMessage($error); // Assuming setFlashMessage function is defined and works as previously described
+        setFlashMessage($error); 
     }
 
     header('Location: ../users.php');
