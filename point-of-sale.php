@@ -24,53 +24,28 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <?php include_once('navbar.php') ?>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
+                <div class="container-fluid">
+                    <div class="row mb-4">
+                        <div class="col-12">
                             <div class="card">
                                 <div class="card-body text-center p-4">
                                     <h6 class="text-uppercase text-muted card-subtitle">TOTAL</h6>
                                     <h4 class="display-4 fw-bold card-title">₱<?php include_once 'functions/pos-total.php'; ?></h4>
-                                </div>
-                                <div class="card-footer p-4">
-                                    <form class="text-center" method="post">
-                                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="button" data-bs-target="#purchase" data-bs-toggle="modal" disabled>Purchase&nbsp;</button></div>
+                                    <form class="text-center mt-3" method="post">
+                                        <button class="btn btn-primary" type="button" data-bs-target="#purchase" data-bs-toggle="modal" disabled>Purchase</button>
                                     </form>
-                                    <div class="card" style="margin-top: 16px;">
-                                        <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Items</p>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-                                                <table class="table table-hover table-bordered my-0" id="dataTable">
-                                                    <thead>
-                                                        <tr>
-                                                            <th style="white-space: nowrap;">Product Code</th>
-                                                            <th>Product Name</th>
-                                                            <th>Size</th>
-                                                            <th>Quantity</th>
-                                                            <th>Price</th>
-                                                            <th>Option</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php include_once 'functions/pos-history.php'; ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
-                            <div class="card shadow">
+                            <div class="card shadow h-100">
                                 <div class="card-header py-3">
-                                    <p class="text-primary m-0 fw-bold">Products</p>
+                                    <p class="text-primary m-0 fw-bold">Cart Items</p>
                                 </div>
                                 <div class="card-body">
-                                    
-                                    <div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
+                                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                                         <table class="table table-hover table-bordered my-0" id="dataTable">
                                             <thead>
                                                 <tr>
@@ -83,7 +58,37 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php include_once 'functions/pos-view-products.php'; ?>
+                                                <?php
+                                                include_once 'functions/pos-history.php';
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow h-100">
+                                <div class="card-header py-3">
+                                    <p class="text-primary m-0 fw-bold">Products</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                        <table class="table table-hover table-bordered my-0" id="dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th style="white-space: nowrap;">Product Code</th>
+                                                    <th>Product Name</th>
+                                                    <th>Size</th>
+                                                    <th>Quantity</th>
+                                                    <th>Price</th>
+                                                    <th>Option</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                include_once 'functions/pos-view-products.php';
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -93,7 +98,8 @@
                     </div>
                 </div>
             </div>
-        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
+        <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="purchase">
     <div class="modal-dialog" role="document">
@@ -159,17 +165,22 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add Item</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title">Add Item</h4>
+                    <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <p>Quantity</p>
-                    <form class="text-center" action="functions/pos-add-item.php" method="post">
+                    <form action="functions/pos-add-item.php" method="post">
                         <input type="hidden" name="product_id">
-                        <div class="mb-3"><input class="form-control" type="number" id="item_qty" name="item_qty" value="1" placeholder="1" min=1 max=999 required></div>
-                        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Add Item</button></div>
+                        <div class="mb-3">
+                            <input class="form-control" type="number" id="item_qty" name="item_qty" value="1" placeholder="1" min="1" max="999" required>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button></div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" type="submit" form="add-item-form">Add Item</button>
+                </div>
             </div>
         </div>
     </div>

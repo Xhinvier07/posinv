@@ -19,8 +19,9 @@ foreach ($results as $row) {
         <td><?php echo $row['qty']; ?></td>
         <td><?php echo $row['price']; ?></td>
         <td>
-            <button class="btn btn-success btn-icon-split" type="button" style="margin: 2px;" data-bs-target="#add-item" data-bs-toggle="modal" data-product-id="<?php echo $row['id']; ?>" data-product-qty="<?php echo $row['qty']; ?>"><span class="text-white-50 icon"><i class="fas fa-arrow-up"></i></span><span class="text-white text">Add</span></button>
-   
+            <button class="btn btn-success btn-sm" type="button" data-bs-target="#add-item" data-bs-toggle="modal" data-product-id="<?php echo $row['id']; ?>" data-product-qty="<?php echo $row['qty']; ?>">
+                <i class="fas fa-plus text-white"></i>
+            </button>
         </td>
     </tr>
 <?php
