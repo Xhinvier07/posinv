@@ -2,7 +2,7 @@
 
 By: Moral, Paglinawan, Quintano, and Sandhu
 
-Hosted Link: http://sari-posims.free.nf/index.php
+Hosted Link: http://sari-posims.free.nf/index.php <br>
 Demo Link: https://youtu.be/h1Kc-AwdSus
 
 ## Project Description
