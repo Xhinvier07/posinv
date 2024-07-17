@@ -1,4 +1,4 @@
-# SARI
+# SARI: POINT OF SALE & INVENTORY MANAGEMENT SYSTEM
 
 By: Moral, Paglinawan, Quintano, and Sandhu
 
