@@ -2,6 +2,8 @@
 
 By: Moral, Paglinawan, Quintano, and Sandhu
 
+Hosted Link: http://sari-posims.free.nf/index.php
+
 ## Project Description
 
 SARI is a powerful website platform designed to streamline sales, stock management, and transaction logging for small businesses and MSMEs. Built with the unique needs of retail operations in mind, SARI offers an intuitive and feature-rich experience, facilitated by the diligent implementation of various essential processes, including validation, sanitation, and database operations, among others, helping sari-sari store owners take control of their inventory and financial records seamlessly.
