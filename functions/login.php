@@ -72,6 +72,5 @@ try {
     $error = "An error occurred. Please try again later. ($error)";
     header('Location: ../index.php?error=' . $error);
 
-    //test
 }
 ?>

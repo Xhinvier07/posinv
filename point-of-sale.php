@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
     <link rel="icon" type="image/png" href="assets/img/48.png">
     <title>POS | SARI</title>
     <meta name="description" content="Inventory &amp; Point of Sale System">
@@ -117,11 +117,15 @@
                             <h4 class="display-4 fw-bold card-title mb-4">₱<?php include 'functions/pos-total.php'; ?></h4>
                             
                             <div class="mb-3">
-                                <input class="form-control" type="number" id="discount" name="discount" min="0" placeholder="Enter amount to be discounted">
+                                <select class="form-select" name="discount" id="discount" required>
+                                    <option value="0">Without Discount</option>
+                                    <option value="5">With Discount (5%)</option>
+
+                                </select>
                             </div>
                             
                             <div class="mb-3">
-                                <input class="form-control" type="number" id="amount" name="amount" min="0" placeholder="Enter amount received" required>
+                                <input class="form-control" type="number" id="amount" name="amount" placeholder="Amount" required>
                             </div>
                             
                             <input type="hidden" name="total_sales" value="<?php include 'functions/pos-total.php'; ?>">
@@ -130,7 +134,8 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" type="submit">Confirm</button>
+                    
+                    <button class="btn btn-primary" type="submit" onclick ="return confirmation()">Confirm</button>
                 </div>
             </div>
         </form>
@@ -183,6 +188,19 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script>
+
+function confirmation(){
+
+if (confirm('Are you sure do you want to confirm the purchase?')) {
+    console.log('confirm');
+    return true;
+} else {
+    console.log('cancel');
+
+    return false;}
+
+}
+
 
         //#purchase button
         $(document).ready(function(){

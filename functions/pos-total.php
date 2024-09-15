@@ -13,7 +13,11 @@ while ($row = $stmt->fetch()) {
     $qty = $row['qty'];
     $price = $row['price'];
 
+
+
     $total_price += $qty * $price;
+
+    
 }
 
 // Display the total price
